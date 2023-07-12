@@ -23,7 +23,7 @@ public class TutorialUI : MonoBehaviour
         KitchenGameManager.Instance.OnStateChanged += KitchenGameManager_OnStateChanged;
 
         UpdateVisual();
-        Show();
+        Hide();
     }
 
     private void KitchenGameManager_OnStateChanged(object sender, System.EventArgs e)
