@@ -232,6 +232,16 @@ namespace CodeMonkey.Utils {
 
 
         // Get Mouse Position in World with Z = 0f
+        public static Vector3 GetMouseWorldPosition3D()
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if(Physics.Raycast(ray,out RaycastHit raycastHit,999f))
+            {
+                return raycastHit.point;
+            }
+            else
+                return Vector3.zero;
+        }
         public static Vector3 GetMouseWorldPosition() {
             Vector3 vec = GetMouseWorldPositionWithZ(Input.mousePosition, Camera.main);
             vec.z = 0f;
